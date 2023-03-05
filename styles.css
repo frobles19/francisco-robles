@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
+
+:root {
+    --pink-red: #FB0E49;
+    --green-blue: #0EFBC0;
+    --green-blue-traslucid: rgba(14, 251, 192, .5);
+    --pink-red-traslucid: rgba(251, 14, 73, .5);
+    --text-white: #eeeeee;
+    --text-black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("./img/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    user-select: none;
+}
+
+.menu-bar {
+    grid-column: 2;
+    display: flex;
+    font-size: 28px;
+    padding: 20px 50px 0 0;
+    justify-content: space-around;
+    cursor: default;
+}
+
+.menu-btn {
+    transition: color 0.15s;
+}
+
+.menu-btn:hover {
+    color: var(--pink-red);
+}
+
+.hero {
+    position: absolute;
+    left: 15%;
+    bottom: 35%;
+    user-select: none;
+    font-size: 16px;
+}
+
+.hero h3 {
+    font-size: 64px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
+.hero h1 {
+    font-size: 5em;
+    /*font-weight: 400;*/
+    padding: 20px 20px;
+    /*background-color: #FB0E49;*/
+    /*box-shadow: 8px 8px var(--green-blue-traslucid);*/
+}
+
+/*  GLITCH EFFECT  */
+
+.hero h1 {
+    background-color: #000000;
+    font-weight: 600;
+    position: relative;
+
+    text-shadow:
+        0.05em 0 0 rgba(255, 0, 0, .75),
+        -0.025em -0.05em 0 rgba(0, 255, 0, .75),
+        0.025em 0.05em 0 rgba(0, 0, 255, .75);
+
+    animation: text-glitch 500ms infinite;
+
+}
+
+.hero h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 20px;
+}
+
+.hero h1 span:first-child {
+    animation: text-glitch 650ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.025em, -0.0125em);
+    opacity: .8;
+}
+
+.hero h1 span:last-child {
+    animation: text-glitch 375ms infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    transform: translate(0.0125em, 0.025em);
+    opacity: .8;
+}
+
+@keyframes text-glitch {
+    0% {
+        text-shadow:
+            0.05em 0 0 rgba(255, 0, 0, .75),
+            -0.025em -0.05em 0 rgba(0, 255, 0, .75),
+            0.025em 0.05em 0 rgba(0, 0, 255, .75);
+    }
+
+    14% {
+        text-shadow:
+            0.05em 0 0 rgba(255, 0, 0, .75),
+            -0.025em -0.05em 0 rgba(0, 255, 0, .75),
+            0.025em 0.05em 0 rgba(0, 0, 255, .75);
+    }
+
+    15% {
+        text-shadow:
+            -0.05em -0.025em 0 rgba(255, 0, 0, .75),
+            0.025em 0.025em 0 rgba(0, 255, 0, .75),
+            -0.05em -0.05em 0 rgba(0, 0, 255, .75);
+    }
+
+    49% {
+        text-shadow:
+            -0.05em -0.025em 0 rgba(255, 0, 0, .75),
+            0.025em 0.025em 0 rgba(0, 255, 0, .75),
+            -0.05em -0.05em 0 rgba(0, 0, 255, .75);
+    }
+
+    50% {
+        text-shadow:
+            0.025em 0.05em 0 rgba(255, 0, 0, .75),
+            0.025em 0.05em 0 rgba(0, 255, 0, .75),
+            0.0em -0.05em 0 rgba(0, 0, 255, .75);
+    }
+
+    99% {
+        text-shadow:
+            0.025em 0.05em 0 rgba(255, 0, 0, .75),
+            0.025em 0.05em 0 rgba(0, 255, 0, .75),
+            0.0em -0.05em 0 rgba(0, 0, 255, .75);
+    }
+
+    100% {
+        text-shadow:
+            -0.025em 0 0 rgba(255, 0, 0, .75),
+            -0.025em -0.025em 0 rgba(0, 255, 0, .75),
+            -0.025em -0.05em 0 rgba(0, 0, 255, .75);
+    }
+}
+
+/*  GLITCH EFFECT  */
+
+.hero button {
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text-white);
+    background: var(--text-white);
+    color: #000000;
+    padding: 5px 30px;
+    margin: 20px 0 0 5px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.15s;
+    transition: background 0.1s;
+    box-shadow:
+        3px 3px var(--green-blue-traslucid),
+        -3px -3px var(--pink-red-traslucid);
+}
+
+.hero button:hover {
+    color: var(--pink-red);
+}
+
+.habilities {
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}
